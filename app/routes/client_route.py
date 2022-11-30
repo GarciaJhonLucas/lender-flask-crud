@@ -2,14 +2,14 @@ from flask import Blueprint, render_template, redirect, request, url_for
 from app.db import db
 from app.models.client_model import Client
 
-client_router = Blueprint("client_router", __name__)
+client_router = Blueprint("client_router", __name__, static_folder='templates/clients')
 
 
 # Start App Client
-@client_router.route("/")
+@client_router.route("/client")
 def index():
-    client_list = Client.query.all()
-    return render_template("index.html", client_list=client_list)
+    #client_list = Client.query.all()
+    return render_template("index.html")
 
 
 # Add Client

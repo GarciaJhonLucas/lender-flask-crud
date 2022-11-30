@@ -3,6 +3,7 @@ from app.db import db
 
 app = create_app()
 
+
 # Create a database
 db.init_app(app)
 with app.app_context():
